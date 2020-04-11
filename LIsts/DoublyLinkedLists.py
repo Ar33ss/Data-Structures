@@ -98,7 +98,7 @@ class Lists():
 
         headval.prev.next = None
 
-    #TODO: revisar
+    #TODO: revisar si hay errores
     def deleteActual(self, x_data):
         """ Deletes a specific given node from the list.
 
@@ -129,10 +129,32 @@ class Lists():
 
 
     def displayForward(self):
-        pass
+
+        if self.is_empty():
+            return None
+
+        headval = self.head
+
+        while headval is not None:
+            print(headval.data)
+            headval = headval.next
+
 
     def displayBackward(self):
-        pass
+
+        if self.is_empty():
+            return None
+
+        headval = self.head
+
+        # first point the last node
+
+        while headval.next is not None:
+            headval = headval.next
+
+        while headval is not None:
+            print(headval.data)
+            headval = headval.prev
 
 
 
@@ -143,8 +165,9 @@ List = Lists()
 List.insertAtLast("Uno")
 List.insertAtLast("Dos")
 List.insertAtLast("Tres")
+List.insertAtLast("Cuatro")
+
 List.deleteActual("Dos")
+List.insertAfter("Cuatro", "Cinco")
 
-List.deleteLast()
-
-a = "test"
+List.displayBackward()

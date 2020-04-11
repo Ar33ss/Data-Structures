@@ -147,7 +147,4 @@ List.deleteActual("Dos")
 
 List.deleteLast()
 
-a = "The new one"
-
-def holis():
-    pass
+a = "test"

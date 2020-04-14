@@ -156,8 +156,9 @@ class Lists():
             print(headval.data)
             headval = headval.prev
 
-
-
+#asdpajflajdflaksdjflaskdjflaskdjfalskdfjasldkfjasdlfkajd;lfajd;kfl
+    def prueba(self):
+        pass
 
 
 List = Lists()

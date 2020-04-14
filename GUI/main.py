@@ -2,17 +2,25 @@ import tkinter as tk
 from LIsts import *
 
 class Application(tk.Frame):
+
     def __init__(self, master=None):
         super().__init__(master)
         self.master = master
         self.pack()
         self.create_widgets()
+        self.l = None
 
     def create_widgets(self):
+        listbox = tk.Listbox(self.master)
+        listbox.pack(pady=40)
 
-        self.d_list()
-        self.d_textbox()
-        self.d_button()
+        textbox = tk.Entry(self.master)
+        textbox.pack(pady=40)
+
+        button = tk.Button(self.master, text="Insertar", command = lambda: self.printv(textbox.get(), listbox))
+        button.pack(pady=40)
+
+
 
         # self.hi_there = tk.Button(self)
         # self.hi_there["text"] = "Hello World\n(click me)"
@@ -25,20 +33,18 @@ class Application(tk.Frame):
 
 
     def d_list(self):
-        listbox = tk.Listbox(self.master)
-        listbox.pack(pady=40)
+        pass
 
     def d_textbox(self):
-        textbox = tk.Entry(self.master)
-        textbox.pack(pady=40)
+        pass
 
     def d_button(self):
-        button = tk.Button(self.master, text="Insertar")
-        button["command"] = self.say
-        button.pack(pady=40)
+        pass
 
-    def say(self):
-        print("Hello world")
+    def printv(self, string, listbox):
+        listbox.insert(tk.END, string)
+
+
 
 root = tk.Tk()
 root.geometry("800x800+50+50")
